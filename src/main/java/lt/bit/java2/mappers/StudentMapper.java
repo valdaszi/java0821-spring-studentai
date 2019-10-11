@@ -20,17 +20,17 @@ public class StudentMapper implements RowMapper<Student> {
         student.setLastName(rs.getString("pavarde"));
         student.setEmail(rs.getString("el_pastas"));
 
-        int pId = rs.getInt("p_id");
-        if (pId != 0) {
-            Grade grade = new Grade();
-            grade.setId(pId);
-            grade.setStudentId(student.getId());
-            grade.setDate(rs.getDate("data").toLocalDate());
-            grade.setGrade(rs.getInt("pazymys"));
-
-            student.setGrades(new ArrayList<>());
-            student.getGrades().add(grade);
-        }
+//        int pId = rs.getInt("p_id");
+//        if (pId != 0) {
+//            Grade grade = new Grade();
+//            grade.setId(pId);
+//            grade.setStudentId(student.getId());
+//            grade.setDate(rs.getDate("data").toLocalDate());
+//            grade.setGrade(rs.getInt("pazymys"));
+//
+//            student.setGrades(new ArrayList<>());
+//            student.getGrades().add(grade);
+//        }
 
         return student;
     }
